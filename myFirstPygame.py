@@ -17,3 +17,12 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 PUKEBROWN = (178, 255, 111)
+
+# Setup the fonts
+basicFont = pygame.font.SysFont(None, 48)
+
+#Setup the text.
+text = basicFont.render('Hello, world!', True, WHITE, BLUE)
+textRect = text.get_rect()
+textRect. centerx = windowSurface.get_rect().centerx
+textRect. centery = windowSurface.get_rect().centery
