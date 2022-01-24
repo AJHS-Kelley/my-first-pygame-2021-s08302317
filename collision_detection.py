@@ -22,7 +22,7 @@ WHITE = (255, 255, 255)
 foodCounter = 0
 NEWFOOD = 40
 FOODSIZE = 20
-player = py.game.Rect(300, 100, 50, 50)
+player = pygame.Rect(300, 100, 50, 50)
 foods = []
 
 for i in range(20):
@@ -101,9 +101,13 @@ while True:
 
     # Check for player colliding with food(s).
     for food in foods[:]:
-        if.player colliderect(food):
+        if player.colliderect(food):
             foods.remove(food)
 
     # Draw the food
     for i in range(len(foods)):
         pygame.draw.rect(windowSurface, GREEN, foods[i])
+
+    # Draw the window to the screen.
+    pygame.display.update()
+    mainClock.tick(40)
