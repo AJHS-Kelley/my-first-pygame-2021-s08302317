@@ -48,13 +48,13 @@ while True:
             if event.key == K_LEFT or event.key == K_a:
                 moveRight = False
                 moveLeft = True
-            if event.key == K_RIGHT or event.key == k_d:
+            if event.key == K_RIGHT or event.key == K_d:
                 moveLeft = False
                 moveRight = True
-            if event.key == K_UP or event.key == k_w:
+            if event.key == K_UP or event.key == K_w:
                 moveDown = False
                 moveUp = True
-            if event.key == K_DOWN or event.key == k_s:
+            if event.key == K_DOWN or event.key == K_s:
                 moveUp = False
                 moveDown = True
         if event.type == KEYUP:
@@ -64,13 +64,13 @@ while True:
             # Check to see if the player has stopped moving.
             if event.key == K_LEFT or event.key == K_a:
                 moveLeft = False
-            if event.key == K_RIGHT or event.key == k_d:
+            if event.key == K_RIGHT or event.key == K_d:
                 moveRight = False
-            if event.key == K_UP or event.key == k_w:
+            if event.key == K_UP or event.key == K_w:
                 moveUp = False
-            if event.key == K_DOWN or event.key == k_s:
+            if event.key == K_DOWN or event.key == K_s:
                 moveDown = False
-            if event.key == k_x:
+            if event.key == K_x:
                 player.top = random.randint(0, WINDOWHEIGHT - player.height)
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
 
@@ -90,7 +90,7 @@ while True:
     if moveDown and player.bottom < WINDOWHEIGHT:
         player.top += MOVESPEED
     if moveUp and player.top > 0:
-        pplayer.top -= MOVESPEED
+        player.top -= MOVESPEED
     if moveLeft and player.left > 0:
         player.left -= MOVESPEED
     if moveRight and player.right < WINDOWWIDTH:
