@@ -2,7 +2,6 @@
 
 import pygame, sys, time
 from pygame.locals import *
-from myFirstPygame import GREEN, RED
 
 # Setup PyGame
 pygame.init()
@@ -40,6 +39,7 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+
     windowSurface.fill(WHITE)
 
     for b in boxes:
@@ -63,24 +63,25 @@ while True:
                 b['dir'] = DOWNLEFT
             if b['dir'] == UPRIGHT:
                 b['dir'] = DOWNRIGHT
-            if b ['dir'].bottom > WINDOWHEIGHT:
-                # The box has moved past the bottom
-                if b['dir'] == DOWNLEFT:
-                    b['dir'] = UPLEFT
-                if b['dir'] == DOWNRIGHT:
-                    b['dir'] = UPRIGHT
-            if B ['rect'].left < 0:
-                # The box has moved past the left
-                if b['dir'] == DOWNLEFT:
-                    b['dir'] = DOWNRIGHT
-                if b['dir'] == UPLEFT:
-                    b['dir'] = UPRIGHT
-            if b ['rect'].right > WINDOWWIDTH:
-                # The box has moved past the right.
-                if b['dir'] == DOWNRIGHT:
-                    b['dir'] = DOWNLEFT
-                if b['dir'] == UPRIGHT:
-                    b['dir'] = UPLEFT
+        if b ['rect'].bottom > WINDOWHEIGHT:
+            # The box has moved past the bottom
+            if b['dir'] == DOWNLEFT:
+                b['dir'] = UPLEFT
+            if b['dir'] == DOWNRIGHT:
+                b['dir'] = UPRIGHT
+        if b ['rect'].left < 0:
+            # The box has moved past the left
+            if b['dir'] == DOWNLEFT:
+                b['dir'] = DOWNRIGHT
+            if b['dir'] == UPLEFT:
+                b['dir'] = UPRIGHT
+        if b ['rect'].right > WINDOWWIDTH:
+            # The box has moved past the right.
+            if b['dir'] == DOWNRIGHT:
+                b['dir'] = DOWNLEFT
+            if b['dir'] == UPRIGHT:
+                b['dir'] = UPLEFT
+
         # Draw the box onto the game surface.
         pygame.draw.rect(windowSurface, b['color'], b['rect'])
 
